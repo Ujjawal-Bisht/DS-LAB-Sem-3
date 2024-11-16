@@ -1,3 +1,4 @@
+#include <stdio.h>
 //  Initializing singly linked list
 
 printf("Linked list Practice \n") ;
@@ -14,7 +15,7 @@ struct node2 {
     struct node2 * next ;
     struct node2 * prev ;
 } ;
-
+/*
 struct node * head = NULL ;
 
 newnode = (struct node *)malloc(sizeof(struct node)) ;
@@ -26,3 +27,4 @@ scanf("%d", &newnode->data);
 head ->next = newnode ;
 newnode->next = NULL ;
 
+*/
