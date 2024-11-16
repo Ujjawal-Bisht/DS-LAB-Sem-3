@@ -1,19 +1,9 @@
 #include <stdio.h>
 //  Initializing singly linked list
 
-printf("Linked list Practice \n") ;
-
 struct node {
     int data ;
     struct node * next ;
-} ;
-
-// Initializing doubly linked list
-
-struct node2 {
-    int data;
-    struct node2 * next ;
-    struct node2 * prev ;
 } ;
 /*
 struct node * head = NULL ;
@@ -28,3 +18,10 @@ head ->next = newnode ;
 newnode->next = NULL ;
 
 */
+// Initializing doubly linked list
+
+struct node2 {
+    int data;
+    struct node2 * next ;
+    struct node2 * prev ;
+} ;
