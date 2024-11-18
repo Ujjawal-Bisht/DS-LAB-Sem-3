@@ -50,7 +50,8 @@ void display() {
         printf("%d ", elements[i]);
     }
     printf("\n");
-    free(elements); }
+    free(elements); 
+}
 
 
 int main(){

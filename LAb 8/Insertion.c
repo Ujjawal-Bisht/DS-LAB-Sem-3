@@ -22,17 +22,39 @@ void pop(){
     free(temp);
 }
 
-void display(){
+void display() {
+    if (top == NULL) 
+    {
+        printf("Stack is empty\n");
+        return; 
+    }
     struct node* temp = top;
-    while(temp != NULL){
-        printf("%d ", temp->data);
+    int count = 0;
+    while (temp != NULL)
+    {
+        count++;
         temp = temp->next;
+        }
+    int* elements = (int*)malloc(count * sizeof(int));
+    if (elements == NULL) { 
+        printf("Memory allocation failed\n");
+        return;
+        } 
+    temp = top;
+    for (int i = count - 1; i >= 0; i--) {
+        elements[i] = temp->data;
+        temp = temp->next;
+        } 
+    for (int i = 0; i < count; i++) {
+        printf("%d ", elements[i]);
     }
     printf("\n");
+    free(elements);
 }
 
+
 int main() {
-    int n;
+    int n,new_elm;
     printf("Enter how many elements u want to enter:- ");
     scanf("%d", &n);
     for (int i = 0; i < n; i++) {
@@ -42,7 +64,9 @@ int main() {
         push(x);
     }
     display();
-    pop();
+    printf("Enter new element:- ");
+    scanf("%d",&new_elm);
+    push(new_elm);
     display();
     return 0;
 }  
