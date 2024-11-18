@@ -17,12 +17,6 @@ void push(int x){
     top = temp;
 }
 
-void pop(){
-    struct node* temp = top;
-    top = top->next;
-    free(temp);
-}
-
 void display() {
     if (top == NULL) 
     {
@@ -64,8 +58,8 @@ int main(){
         scanf("%d",&x);
         push(x);
     }
-    display();
-    pop();
+
+    printf("Entered Stack:- ");
     display();
     return 0;
 

@@ -1,10 +1,11 @@
-// Inserting new elements in stack in linked list
+//  Stack implementation using linked list
+
 #include <stdio.h>
 #include <stdlib.h>
 
 struct node{
-    int data ;
-    struct node* next ;
+    int data;
+    struct node* next;
 };
 
 struct node* top = NULL;
@@ -14,6 +15,12 @@ void push(int x){
     temp->data = x;
     temp->next = top;
     top = temp;
+}
+
+void pop(){
+    struct node* temp = top;
+    top = top->next;
+    free(temp);
 }
 
 void display() {
@@ -43,28 +50,25 @@ void display() {
         printf("%d ", elements[i]);
     }
     printf("\n");
-    free(elements);
+    free(elements); 
 }
 
 
-int main() {
-    int n,new_elm;
+int main(){
+    int n;
     printf("Enter how many elements u want to enter:- ");
-    scanf("%d", &n);
-    for (int i = 0; i < n; i++) {
+    scanf("%d",&n);
+    for (int i=0 ; i<n ; i++){
         int x;
-        printf("Enter element %d:- ", i + 1);
-        scanf("%d", &x);
+        printf("Enter element %d:- ",i+1);
+        scanf("%d",&x);
         push(x);
     }
-    printf("Entered stack-");
+    printf("Entered Stack:- ");
     display();
-
-    printf("Enter new element:- ");
-    scanf("%d",&new_elm);
-    push(new_elm);
-    
-    printf("New Stack after insertion:- ");
+    pop();
+    printf("Stack after deletion:- ");
     display();
     return 0;
-}  
+
+    }
