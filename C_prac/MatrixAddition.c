@@ -1,5 +1,5 @@
 #include<stdio.h>
-void main()
+int main()
 {
     int i1,j1;
     int a[10][10] ;
@@ -33,4 +33,5 @@ void main()
         }
         printf("\n");
     }
+    return 0 ;
 }
