@@ -28,5 +28,20 @@ int main(){
     // For example, make newnode the head of the list // Print the data to verify 
     printf("Node data: %d\n", head->data);
 
+/*
+    // To add more nodes, follow the same steps as above.
+    newnode -> next = 2;
+    newnode -> next -> data = 20;
+    newnode -> next -> next = 3;
+    newnode -> next -> next -> data = 30;
+    newnode -> next -> next -> next = NULL;
+                                                        Wrong Method (Just for understnding)
+    // Print the list to verify the added nodes
+    struct node *current = head;
+    while(current!=NULL){
+        printf("Node data: %d\n", current->data);
+        current = current->next;
+    }
+*/
     return 0 ;
 }
