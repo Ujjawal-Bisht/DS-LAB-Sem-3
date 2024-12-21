@@ -5,7 +5,7 @@ struct node{
     int data;
     struct node* next;
 };
-
+/*
 struct node *head = NULL;
 int main(){
     printf("Linked List Practice\n");
@@ -28,7 +28,7 @@ int main(){
     // For example, make newnode the head of the list // Print the data to verify 
     printf("Node data: %d\n", head->data);
 
-/*
+
     // To add more nodes, follow the same steps as above.
     newnode -> next = 2;
     newnode -> next -> data = 20;
@@ -42,6 +42,17 @@ int main(){
         printf("Node data: %d\n", current->data);
         current = current->next;
     }
-*/
+
     return 0 ;
+}
+*/
+
+int main(){
+struct node* createNode(int data){
+    struct node* newNode = (struct node*) malloc(sizeof (struct node));
+    newNode->data = data;
+    newNode->next = NULL;
+    return newNode;
+}
+
 }

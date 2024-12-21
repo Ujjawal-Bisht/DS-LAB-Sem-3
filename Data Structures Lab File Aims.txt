@@ -1,0 +1,9 @@
+Data Structures Lab
+
+lab 1-	Swap 2 numbers by call by value and call by reference
+lab 2-	Apply different sorting techniques(bubble, insertion, selection and quick sort)
+lab 3-	Traversing and inserting elements in 1D and 2D array
+lab 4-	Make and Traverse singliee and doubly linked list and do insertion in singly linked list
+lab 5-	Deletion in singly linked list and insertion in doubly linked list
+lab 6-	Deletion in doubly linked list and insertion in circular linked list
+lab 7-  Traverse, Insertion and deletion in stack.
