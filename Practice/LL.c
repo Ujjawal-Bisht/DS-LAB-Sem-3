@@ -1,10 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-struct node{
-    int data;
-    struct node* next;
-};
 /*
 struct node *head = NULL;
 int main(){
@@ -47,7 +43,10 @@ int main(){
 }
 */
 
-int main(){
+struct node{
+    int data;
+    struct node* next;
+};
 struct node* createNode(int data){
     struct node* newNode = (struct node*) malloc(sizeof (struct node));
     newNode->data = data;
@@ -55,4 +54,28 @@ struct node* createNode(int data){
     return newNode;
 }
 
+void display(struct node* head){
+    struct node* temp = head;
+    while(temp!=NULL){
+        printf("%d ", temp->data);
+        temp = temp->next;
+    }
+    printf("\n");
+}
+
+int main(){
+    struct node* head = createNode(10);
+    struct node* second = createNode(20); 
+    struct node* third = createNode(30); 
+    struct node* fourth = createNode(40); 
+    
+    // Link nodes to form the linked list: head -> second -> third -> fourth 
+    head->next = second; 
+    second->next = third; 
+    third->next = fourth;
+
+    //Dispaly the linked list
+    display(head);
+
+    return 0 ;
 }
