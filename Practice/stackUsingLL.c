@@ -47,7 +47,7 @@ void display(struct stack* head){
 }
 
 void main(){
-
+    struct stack* head = NULL;
     int n;
     printf("Enter how many nodes you want to enter:- ");
     scanf("%d",&n) ;
@@ -56,8 +56,8 @@ void main(){
         int elm;
         printf("Enter element:- ");
         scanf("%d",&elm);
-        push(elm, newnode);
+        push(elm, head);
     }
 
-    display(newnode) ;
+    display(head) ;
 }
