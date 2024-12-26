@@ -4,8 +4,8 @@
 #include <stdlib.h>
 
 struct node{
-    int data;
-    struct node* next;
+    int data ;
+    struct node* next ;
 };
 
 struct node* top = NULL;
@@ -16,59 +16,42 @@ void push(int x){
     temp->next = top;
     top = temp;
 }
-
 void pop(){
     struct node* temp = top;
     top = top->next;
     free(temp);
 }
 
-void display() {
-    if (top == NULL) 
-    {
+void traverse(struct node *top) {
+    if (top == NULL) {
         printf("Stack is empty\n");
-        return; 
-    }
-    struct node* temp = top;
-    int count = 0;
-    while (temp != NULL)
-    {
-        count++;
-        temp = temp->next;
-        }
-    int* elements = (int*)malloc(count * sizeof(int));
-    if (elements == NULL) { 
-        printf("Memory allocation failed\n");
         return;
-        } 
-    temp = top;
-    for (int i = count - 1; i >= 0; i--) {
-        elements[i] = temp->data;
+    }
+    struct node *temp = top;
+    while (temp != NULL) {
+        printf("%d ", temp->data);
         temp = temp->next;
-        } 
-    for (int i = 0; i < count; i++) {
-        printf("%d ", elements[i]);
     }
     printf("\n");
-    free(elements); 
 }
 
 
 int main(){
-    int n;
+    int n,new_elm;
     printf("Enter how many elements u want to enter:- ");
-    scanf("%d",&n);
-    for (int i=0 ; i<n ; i++){
+    scanf("%d", &n);
+    for (int i = 0; i < n; i++) {
         int x;
-        printf("Enter element %d:- ",i+1);
-        scanf("%d",&x);
+        printf("Enter element %d:- ", i + 1);
+        scanf("%d", &x);
         push(x);
     }
-    printf("Entered Stack:- ");
-    display();
-    pop();
-    printf("Stack after deletion:- ");
-    display();
-    return 0;
+    printf("Entered stack-");
+    traverse(top);
 
+    pop();
+    
+    printf("New Stack after deletion:- ");
+    traverse(top);
+    return 0;
     }

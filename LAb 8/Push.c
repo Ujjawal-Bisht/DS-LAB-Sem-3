@@ -16,34 +16,17 @@ void push(int x){
     top = temp;
 }
 
-void display() {
-    if (top == NULL) 
-    {
+void traverse(struct node *top) {
+    if (top == NULL) {
         printf("Stack is empty\n");
-        return; 
-    }
-    struct node* temp = top;
-    int count = 0;
-    while (temp != NULL)
-    {
-        count++;
-        temp = temp->next;
-        }
-    int* elements = (int*)malloc(count * sizeof(int));
-    if (elements == NULL) { 
-        printf("Memory allocation failed\n");
         return;
-        } 
-    temp = top;
-    for (int i = count - 1; i >= 0; i--) {
-        elements[i] = temp->data;
+    }
+    struct node *temp = top;
+    while (temp != NULL) {
+        printf("%d ", temp->data);
         temp = temp->next;
-        } 
-    for (int i = 0; i < count; i++) {
-        printf("%d ", elements[i]);
     }
     printf("\n");
-    free(elements);
 }
 
 
@@ -58,13 +41,13 @@ int main() {
         push(x);
     }
     printf("Entered stack-");
-    display();
+    traverse(top);
 
     printf("Enter new element:- ");
     scanf("%d",&new_elm);
     push(new_elm);
     
     printf("New Stack after insertion:- ");
-    display();
+    traverse(top);
     return 0;
 }  
