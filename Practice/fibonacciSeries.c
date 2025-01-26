@@ -13,7 +13,7 @@ int main(){
     if (n==1)
         printf("%d\t",a[0]);
     else if(n==2)
-        printf("%d\t",a[1]);
+        printf("%d\t%d\t",a[0],a[1]);
     else{
         printf("%d\t",a[0]);
         printf("%d\t",a[1]);
